@@ -1,10 +1,32 @@
+import axios from "axios";
 import { useState } from "react";
 
-const AddTutorial = () => {
+const AddTutorial = ({ getTutorials }) => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
 
-  const handleSubmit = (e) => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newTutor = {
+      title: title,
+      description: desc,
+    };
+    addTutorial(newTutor);
+    setTitle("");
+    setDesc("");
+  };
+
+  const addTutorial = async (newTutor) => {
+    const url = "http://127.0.0.1:8000/tutorials/";
+
+    try {
+      await axios.post(url, newTutor);
+    } catch (error) {
+      console.log(error);
+    }
+
+    getTutorials();
+  };
 
   return (
     <div className="container text-center mt-4">
