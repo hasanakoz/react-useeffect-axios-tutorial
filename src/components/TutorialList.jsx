@@ -1,8 +1,12 @@
 import { FaEdit } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 import axios from "axios";
+import { useState } from "react";
+import EditTutorial from "./EditTutorial";
 
 const TutorialList = ({ tutorials, getTutorials }) => {
+  const [editItem, setEditItem] = useState("");
+
   const deleteTutorial = async (id) => {
     const url = "http://127.0.0.1:8000/tutorials";
     try {
@@ -13,15 +17,6 @@ const TutorialList = ({ tutorials, getTutorials }) => {
     getTutorials();
   };
 
-  const editTutorials = async (item) => {
-    const url = "http://127.0.0.1:8000/tutorials";
-    try {
-      await axios.put(`${url}/${item.id}/`);
-    } catch (error) {
-      console.log(error);
-    }
-    getTutorials();
-  };
   return (
     <div className="container mt-4">
       <table className="table table-striped">
@@ -47,14 +42,19 @@ const TutorialList = ({ tutorials, getTutorials }) => {
                   <FaEdit
                     size={20}
                     type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#edit-modal"
                     className="me-2 text-warning"
-                    onClick={() => editTutorials()}
+                    onClick={() => {
+                      setEditItem(item);
+                      console.log(editItem);
+                    }}
                   />
                   <AiFillDelete
                     size={22}
                     type="button"
                     className="text-danger "
-                    onClick={() => deleteTutorial()}
+                    onClick={() => deleteTutorial(id)}
                   />
                 </td>
               </tr>
@@ -62,6 +62,8 @@ const TutorialList = ({ tutorials, getTutorials }) => {
           })}
         </tbody>
       </table>
+
+      <EditTutorial editItem={editItem} getTutorials={getTutorials} />
     </div>
   );
 };

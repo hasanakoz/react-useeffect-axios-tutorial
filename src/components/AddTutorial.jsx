@@ -3,17 +3,17 @@ import { useState } from "react";
 
 const AddTutorial = ({ getTutorials }) => {
   const [title, setTitle] = useState("");
-  const [desc, setDesc] = useState("");
+  const [description, setDescription] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newTutor = {
-      title: title,
-      description: desc,
+      title,
+      description,
     };
     addTutorial(newTutor);
     setTitle("");
-    setDesc("");
+    setDescription("");
   };
 
   const addTutorial = async (newTutor) => {
@@ -55,8 +55,8 @@ const AddTutorial = ({ getTutorials }) => {
             className="form-control"
             id="desc"
             placeholder="Enter your Description"
-            value={desc}
-            onChange={(e) => setDesc(e.target.value)}
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
             required
           />
         </div>
