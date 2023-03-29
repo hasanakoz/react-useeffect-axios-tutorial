@@ -75,24 +75,24 @@ const EditTutorial = ({ getTutorials, editItem }) => {
                     required
                   />
                 </div>
-              </form>
-            </div>
-            <div className="modal-footer">
-              {/* <button
+                <div className="modal-footer">
+                  {/* <button
                 type="button"
                 className="btn btn-secondary"
                 data-bs-dismiss="modal"
               >
                 Close
               </button> */}
-              <button
-                type="button"
-                className="btn btn-primary"
-                data-bs-dismiss="modal"
-                onClick={handleSubmit}
-              >
-                Save
-              </button>
+                  <button
+                    type="submit"
+                    className="btn btn-primary"
+                    data-bs-dismiss="modal"
+                    // onClick={handleSubmit}
+                  >
+                    Save
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
