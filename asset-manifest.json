@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-useeffect-axios-tutorial/static/css/main.c59cc657.css",
+    "main.js": "/react-useeffect-axios-tutorial/static/js/main.c8ee1a05.js",
+    "index.html": "/react-useeffect-axios-tutorial/index.html",
+    "main.c59cc657.css.map": "/react-useeffect-axios-tutorial/static/css/main.c59cc657.css.map",
+    "main.c8ee1a05.js.map": "/react-useeffect-axios-tutorial/static/js/main.c8ee1a05.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c59cc657.css",
+    "static/js/main.c8ee1a05.js"
+  ]
+}
