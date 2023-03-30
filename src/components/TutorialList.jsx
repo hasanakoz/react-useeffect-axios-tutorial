@@ -8,7 +8,7 @@ const TutorialList = ({ tutorials, getTutorials }) => {
   const [editItem, setEditItem] = useState("");
 
   const deleteTutorial = async (id) => {
-    const url = "http://127.0.0.1:8000/tutorials";
+    const url = "https://hasanoz3270.pythonanywhere.com/tutorials/";
     try {
       await axios.delete(`${url}/${id}/`);
     } catch (error) {

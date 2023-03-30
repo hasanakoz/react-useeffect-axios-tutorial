@@ -7,7 +7,7 @@ import { useEffect } from "react";
 const Home = () => {
   const [tutorials, setTutorials] = useState([]);
 
-  const url = "http://127.0.0.1:8000/tutorials/";
+  const url = "https://hasanoz3270.pythonanywhere.com/tutorials/";
 
   const getTutorials = async () => {
     try {
